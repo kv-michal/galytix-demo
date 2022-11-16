@@ -12,7 +12,7 @@ import {UnitLabel} from "../../models/weather";
   styleUrls: ['./country-weather.component.scss']
 })
 export class CountryWeatherComponent implements OnInit {
-  units?: keyof UnitLabel;
+  units?: keyof UnitLabel = 'metric';
   unitLabel: UnitLabel = {
     metric: {
       temperature: '°C',
