@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {CountryService} from "../../services/country/country.service";
 
 @Component({
@@ -6,7 +6,7 @@ import {CountryService} from "../../services/country/country.service";
   templateUrl: './countries-list.component.html',
   styleUrls: ['./countries-list.component.scss']
 })
-export class CountriesListComponent implements OnInit {
+export class CountriesListComponent {
   countries$ = this.countryService.getAll$();
 
   trackByIndex(index: number) {
@@ -16,9 +16,6 @@ export class CountriesListComponent implements OnInit {
   constructor(
     private countryService: CountryService
   ) {
-  }
-
-  ngOnInit(): void {
   }
 
 }

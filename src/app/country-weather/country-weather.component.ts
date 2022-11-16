@@ -11,7 +11,7 @@ import {UnitLabel} from "../../models/weather";
   templateUrl: './country-weather.component.html',
   styleUrls: ['./country-weather.component.scss']
 })
-export class CountryWeatherComponent implements OnInit {
+export class CountryWeatherComponent {
   units?: keyof UnitLabel = 'metric';
   unitLabel: UnitLabel = {
     metric: {
@@ -38,9 +38,6 @@ export class CountryWeatherComponent implements OnInit {
     private weatherService: WeatherService,
     private router: Router
   ) {
-  }
-
-  ngOnInit(): void {
   }
 
   setUnits(change: MatButtonToggleChange): void {
