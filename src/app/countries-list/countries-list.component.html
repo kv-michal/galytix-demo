@@ -1,0 +1,8 @@
+<h1>Countries</h1>
+<mat-grid-list cols="4" rowHeight="70px" gutterSize="10px">
+  <mat-grid-tile *ngFor="let country of countries$ | async; trackBy: trackByIndex">
+    <mat-card [routerLink]="['/weather', country]" class="country">
+      <mat-card-title>{{country}}</mat-card-title>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

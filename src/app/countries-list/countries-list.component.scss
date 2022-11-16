@@ -1,0 +1,9 @@
+.country {
+  width: 100%;
+  cursor: pointer;
+  border: 1px solid transparent;
+
+  &:hover {
+    border-color: rgba(128, 128, 128, 0.9);
+  }
+}

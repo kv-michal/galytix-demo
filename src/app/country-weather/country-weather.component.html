@@ -1,0 +1,23 @@
+<div>
+  <button [routerLink]="['/']" mat-raised-button color="primary">Back</button>
+</div>
+
+<mat-button-toggle-group name="Units" [value]="units" (change)="setUnits($event)" class="units">
+  <mat-button-toggle value="metric">metric</mat-button-toggle>
+  <mat-button-toggle value="imperial">imperial</mat-button-toggle>
+</mat-button-toggle-group>
+
+<mat-card *ngIf="weather$ | async as weather; else loading" class="weather">
+  <mat-card-title>{{weather.name}}</mat-card-title>
+  <mat-card-content>
+    <div>{{weather.weather[0].description}}</div>
+    <div>Temperature: {{weather.main.temp}} {{getUnitLabel('temperature')}}</div>
+    <div>Wind: {{weather.wind.speed}} {{getUnitLabel('speed')}}</div>
+  </mat-card-content>
+</mat-card>
+
+<ng-template #loading>
+  <mat-card class="loading">
+    <mat-card-title>Loading...</mat-card-title>
+  </mat-card>
+</ng-template>
