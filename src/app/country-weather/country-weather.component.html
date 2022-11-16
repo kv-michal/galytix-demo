@@ -13,6 +13,13 @@
     <div>{{weather.weather[0].description}}</div>
     <div>Temperature: {{weather.main.temp}} {{getUnitLabel('temperature')}}</div>
     <div>Wind: {{weather.wind.speed}} {{getUnitLabel('speed')}}</div>
+    <div *ngIf="weather.rain">Precipitation:
+      <ul class="rain">
+        <li *ngFor="let rainDetail of weather.rain | keyvalue">
+          {{rainDetail.key}}: {{rainDetail.value}} mm
+        </li>
+      </ul>
+    </div>
   </mat-card-content>
 </mat-card>
 

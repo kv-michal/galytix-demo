@@ -4,7 +4,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {switchMap} from 'rxjs/operators';
 import {combineLatest} from "rxjs";
 import { MatButtonToggleChange } from '@angular/material/button-toggle';
-import {UnitLabel} from "./weather";
+import {UnitLabel} from "../../models/weather";
 
 @Component({
   selector: 'app-country-weather',

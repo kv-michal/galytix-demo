@@ -51,6 +51,7 @@ export interface WeatherResponse {
   id: number;
   name: string;
   cod: number;
+  rain?: Record<string, number>
 }
 
 export interface UnitLabel {
